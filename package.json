@@ -1,0 +1,27 @@
+{
+  "name": "sua-card-generator-web",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/maxhaponenko/sua-card-generator-web.git"
+  },
+  "author": "max.haponenko",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/maxhaponenko/sua-card-generator-web/issues"
+  },
+  "homepage": "https://github.com/maxhaponenko/sua-card-generator-web#readme",
+  "devDependencies": {
+    "webpack": "^5.73.0",
+    "webpack-cli": "^4.10.0"
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  }
+}
