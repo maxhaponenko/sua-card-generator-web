@@ -71,11 +71,3 @@ module.exports = () => {
   }
   return config;
 };
-
-
-// "baseUrl": ".",
-//     "paths": {
-//       "src": [
-//         "src"
-//       ]
-//     }
