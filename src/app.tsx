@@ -1,15 +1,23 @@
-import styled from 'styled-components'
-import { Provider } from 'react-redux'
-import { store } from '@/store'
+import styled from 'styled-components';
+import { Provider } from 'react-redux';
+import { store } from '@/store';
 
 export default function App() {
-    return (
-        <Provider store={store}>
-            <StyledWrapper>HELLO ! ! ! ! </StyledWrapper>
-        </Provider>
-    )
+  const someVarHere = '123332';
+
+  function some(): unknown {
+    return someVarHere;
+  }
+
+  console.log(some());
+
+  return (
+    <Provider store={store}>
+      <StyledWrapper>HELLO ! ! ! ! </StyledWrapper>
+    </Provider>
+  );
 }
 
-const StyledWrapper = styled.div`
+export const StyledWrapper = styled.div`
     font-size: 30px;
-`
+`;

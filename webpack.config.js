@@ -3,6 +3,7 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const CopyPlugin = require("copy-webpack-plugin")
 
 const isProduction = process.env.NODE_ENV == "production";
 
@@ -21,8 +22,13 @@ const config = {
     host: "localhost",
   },
   plugins: [
+    new CopyPlugin({
+      patterns: [
+        { from: "public", to: "dist" }
+      ],
+    }),
     new HtmlWebpackPlugin({
-      template: "index.html",
+      template: "./public/index.html",
     }),
 
     // Add your plugins here
