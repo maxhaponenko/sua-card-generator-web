@@ -56,7 +56,7 @@ module.exports = {
       {
         relativeDepth: 1,
         aliases: [
-          { alias: "@", matcher: "src" }, // src/modules/app/test -> @src/modules/app/test
+          { alias: "@", matcher: "src" },
         ],
       },
     ],
@@ -68,6 +68,6 @@ module.exports = {
       classes: true,
       variables: false,
       allowNamedExports: false,
-    }],
+    }]
   },
 };
