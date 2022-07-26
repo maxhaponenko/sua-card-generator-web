@@ -11,12 +11,16 @@
     "paths": {
       "@/*": ["*"]
     },
+
+    
     
     "moduleResolution": "node"
   },
-  "include": ["**/*.js", "**/*.jsx", "**/*.ts", "**/*.tsx"],
+  
+  "include": ["**/*.js", "**/*.jsx", "**/*.ts", "**/*.tsx", ".eslintrc.js"],
   "exclude": ["node_modules"],
   "files": [
     "src/index.tsx"
-  ]
+  ],
+  
 }

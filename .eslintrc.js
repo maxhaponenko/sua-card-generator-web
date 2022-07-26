@@ -3,12 +3,6 @@ module.exports = {
     browser: true,
     es2021: true,
   },
-  extends: [
-    'plugin:react/jsx-runtime',
-    'plugin:@typescript-eslint/recommended',
-    'plugin:react/recommended',
-    'airbnb',
-  ],
   parser: '@typescript-eslint/parser',
   parserOptions: {
     ecmaFeatures: {
@@ -17,19 +11,38 @@ module.exports = {
     ecmaVersion: 'latest',
     sourceType: 'module',
   },
+  extends: [
+    'airbnb',
+    'plugin:@typescript-eslint/recommended',
+    'plugin:react/recommended',
+    'plugin:react/jsx-runtime',
+    'plugin:import/recommended'
+  ],
   plugins: [
-    'react',
     '@typescript-eslint',
+    'react'
   ],
 
   settings: {
-    "import/resolver": {
-      "node": {
-        "extensions": [".js", ".jsx", ".ts", ".tsx"]
-      }
+    'import/resolver': {
+      alias: {
+        map: [
+          ['@', './src'],
+        ],
+        extensions: ['.ts', '.js', '.jsx', '.tsx', '.json'],
+        node: {
+          extensions: [".js", ".jsx", ".ts", ".tsx"]
+        }
+      },
     },
   },
-  rules: {
+
+  "rules": {
+    quotes: "off", // [1, "single"],
+    semi: "off",
+    'quote-props': 1,
+    "comma-dangle": 0,
+
     "import/extensions": [
       "error",
       "ignorePackages",
@@ -40,34 +53,15 @@ module.exports = {
         "tsx": "never"
       }
     ],
-    'import/resolver': {
-      alias: {
-        map: [
-          ['@', './src'],
-        ],
-        extensions: ['.ts', '.js', '.jsx', '.tsx', '.json', '...'],
-      },
-    },
-    quotes: "off",
-    'quote-props': 1,
-    "comma-dangle": 0,
-    "import-alias/import-alias": [
-      "error",
-      {
-        relativeDepth: 1,
-        aliases: [
-          { alias: "@", matcher: "src" },
-        ],
-      },
-    ],
+
     'react/react-in-jsx-scope': 'off',
-    'react/jsx-filename-extension': [2, { extensions: ['.js', '.jsx', '.ts', '.tsx'] }],
+    'react/jsx-filename-extension': 0,
     'no-console': 1,
     'no-use-before-define': ['error', {
-      functions: true,
+      functions: false,
       classes: true,
       variables: false,
-      allowNamedExports: false,
+      allowNamedExports: true,
     }]
   },
 };

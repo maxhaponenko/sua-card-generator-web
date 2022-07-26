@@ -3,13 +3,14 @@ import { Provider } from 'react-redux';
 import { store } from '@/store';
 
 export default function App() {
-  const someVarHere = '123332';
+  const someVarHere = "123332"
+
+  some()
 
   function some(): unknown {
-    return someVarHere;
+    console.log()
+    return ''
   }
-
-  console.log(some());
 
   return (
     <Provider store={store}>
