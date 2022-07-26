@@ -19,11 +19,12 @@ module.exports = {
     'plugin:import/recommended'
   ],
   plugins: [
-    '@typescript-eslint',
-    'react'
+    // '@typescript-eslint',
+    // 'react'
   ],
 
   settings: {
+
     'import/resolver': {
       alias: {
         map: [
@@ -35,13 +36,27 @@ module.exports = {
         }
       },
     },
+
   },
 
   "rules": {
-    quotes: "off", // [1, "single"],
-    semi: "off",
-    'quote-props': 1,
+    
+    // General core JS rules
+
+    "quotes": "off", // [1, "single"],
+    "semi": "off",
+    "quote-props": 1,
     "comma-dangle": 0,
+    "eol-last": 0,
+    'no-console': 1,
+    'no-use-before-define': ['error', {
+      functions: false,
+      classes: true,
+      variables: false,
+      allowNamedExports: true,
+    }],
+
+    // Plugins or extends rules
 
     "import/extensions": [
       "error",
@@ -56,12 +71,7 @@ module.exports = {
 
     'react/react-in-jsx-scope': 'off',
     'react/jsx-filename-extension': 0,
-    'no-console': 1,
-    'no-use-before-define': ['error', {
-      functions: false,
-      classes: true,
-      variables: false,
-      allowNamedExports: true,
-    }]
+    
+    "@typescript-eslint/no-var-requires": "off"
   },
 };
