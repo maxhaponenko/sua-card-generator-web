@@ -1,6 +1,6 @@
-import styled from 'styled-components';
 import { Provider } from 'react-redux';
 import store from '@/store';
+import { Card } from './card/card';
 
 export default function App() {
   const someVarHere = "123332"
@@ -14,11 +14,7 @@ export default function App() {
 
   return (
     <Provider store={store}>
-      <StyledWrapper>HELLO ! ! ! ! </StyledWrapper>
+      <Card />
     </Provider>
   );
 }
-
-export const StyledWrapper = styled.div`
-    font-size: 30px;
-`;

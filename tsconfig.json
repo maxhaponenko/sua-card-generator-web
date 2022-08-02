@@ -1,5 +1,6 @@
 {
   "compilerOptions": {
+    "outDir": "./dist",
     "jsx": "react-jsx",
     "allowSyntheticDefaultImports": true,
     "noImplicitAny": true,
@@ -12,15 +13,14 @@
       "@/*": ["*"]
     },
 
-    
-    
     "moduleResolution": "node"
   },
-  
   "include": ["**/*.js", "**/*.jsx", "**/*.ts", "**/*.tsx", ".eslintrc.js"],
-  "exclude": ["node_modules"],
+  "exclude": [
+    "node_modules",
+    "./dist/**/*"
+  ],
   "files": [
     "src/index.tsx"
   ],
-  
 }
