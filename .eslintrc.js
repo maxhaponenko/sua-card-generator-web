@@ -55,6 +55,7 @@ module.exports = {
       variables: false,
       allowNamedExports: true,
     }],
+    camelcase: 1,
 
     // Plugins or extends rules
 
@@ -72,6 +73,10 @@ module.exports = {
     'react/react-in-jsx-scope': 'off',
     'react/jsx-filename-extension': 0,
     
-    "@typescript-eslint/no-var-requires": "off"
+    "@typescript-eslint/no-var-requires": "off",
+
+    'jsx-a11y/no-static-element-interactions': "off",
+    "jsx-a11y/click-events-have-key-events": "off"
+
   },
 };

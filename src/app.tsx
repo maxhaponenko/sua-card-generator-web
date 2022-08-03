@@ -1,6 +1,6 @@
 import { Provider } from 'react-redux';
 import store from '@/store';
-import { Card } from './card/card';
+import Card from './card/card';
 
 export default function App() {
   const someVarHere = "123332"
