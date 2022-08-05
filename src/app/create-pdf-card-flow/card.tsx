@@ -1,60 +1,26 @@
 import { useState } from 'react'
-import moment from 'moment'
-import bgImage from './background-layers.png'
-import CalendarIcon from './Calendar.png'
-import Logo from './logo.png'
-import './card.scss'
 // import { useStores, rootStore } from 'renderer/store/root.store'
 // import { useEffect } from 'react'
-// import { Rows } from 'renderer/store/card-gererator.store'
-// const ipcRenderer = require('electron').ipcRenderer
+import moment from 'moment'
+import { Card } from '@/app/create-pdf-card-flow/create-pdf-card-flow.slice'
+import bgImage from './assets/background-layers.png'
+import CalendarIcon from './assets/Calendar.png'
+import Logo from './assets/logo.png'
+import './card.scss'
 
-export default function Card() {
-  // const {
-  //   cardGeneratorStore: {
-  //     currentRow,
-  //     markAsDone
-  //   }
-  // } = useStores()
+export interface StateProps {
+  card: Card;
+}
+export interface DispatchProps {
+  onTextChange: (value: string) => void;
+  onNameChange: (value: string) => void;
+  uploadImage: (value: any) => void;
+}
+interface Props extends StateProps, DispatchProps {}
 
-  // async function processExport() {
-  //   if (!currentRow) return
-  //   try {
-  //     await ipcRenderer.invoke('generate-pdf', currentRow.id)
-  //     markAsDone()
-  //   } catch (error) {
-  //     console.log(error)
-  //     throw error
-  //   }
-  // }
-
-  // async function processUpload() {
-  //   try {
-  //     await ipcRenderer.invoke('upload-csv')
-  //   } catch (error) {
-  //     console.log(error)
-  //   }
-  // }
-
-  // useEffect(() => {
-  //   setTimeout(() => {
-  //     processExport()
-  //   }, 2000)
-  // }, [currentRow])
-
-  // if (!currentRow) {
-  //   return <button className='upload-csv-btn' onClick={() => processUpload()}>Upload CSV</button>
-  // }
-
-  const [card, setCard] = useState({
-    name: '',
-    date: '',
-    text: '',
-    image: {
-      shape: 'portrait',
-      base64: ''
-    }
-  })
+export default function Card(props: Props) {
+  const { card } = props
+  const imageShape = 'portrait'
 
   const currentRow = {
     data: {
@@ -123,7 +89,7 @@ export default function Card() {
 
         <img className="background-layer" src={bgImage} alt="" />
         <div
-          className={`image ${card.image.shape}`}
+          className={`image ${imageShape}`}
           style={{
             backgroundImage: `url(${card.image.base64})`,
             width: `${getImageDimensions().width}vw`,
@@ -141,12 +107,12 @@ export default function Card() {
         </div>
         <div
           onClick={() => markAsDone()}
-          className={`text ${card.image.shape === 'portrait' ? 'left' : ''}`}
+          className={`text ${imageShape === 'portrait' ? 'left' : ''}`}
           style={{ fontSize, lineHeight: `${fontSize + 5}px` }}
         >
           {card.text}
         </div>
-        <img className={`logo ${card.image.shape === 'portrait' ? 'top-left' : 'bottom-right'}`} src={Logo} alt="" />
+        <img className={`logo ${imageShape === 'portrait' ? 'top-left' : 'bottom-right'}`} src={Logo} alt="" />
       </div>
     </div>
   )

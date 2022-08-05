@@ -1,6 +1,8 @@
 .card-generator {
   position: relative;
   width: 100%;
+  max-width: 1360px;
+  margin: 0 auto;
   padding-top: 70.9%;
   // height: 70.9%;
   overflow: hidden;
@@ -56,7 +58,7 @@
         right: -85px;
         width: 140px;
         height: 115px;
-        background-image: url("./paint.png");
+        background-image: url("./assets/paint.png");
         background-size: contain;
         background-position: center;
       }
@@ -76,7 +78,7 @@
         right: -85px;
         width: 140px;
         height: 115px;
-        background-image: url("./paint.png");
+        background-image: url("./assets/paint.png");
         background-size: contain;
         background-position: center;
       }
@@ -96,7 +98,7 @@
         right: -85px;
         width: 140px;
         height: 115px;
-        background-image: url("./paint.png");
+        background-image: url("./assets/paint.png");
         background-size: contain;
         background-position: center;
       }

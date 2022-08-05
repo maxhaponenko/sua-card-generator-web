@@ -7,4 +7,6 @@ const store = configureStore({
   middleware: (getDefaultMiddleware) => getDefaultMiddleware(),
 });
 
+export type AppState = ReturnType<typeof store.getState>;
+
 export default store;

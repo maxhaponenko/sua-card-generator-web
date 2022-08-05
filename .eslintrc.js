@@ -76,7 +76,15 @@ module.exports = {
     "@typescript-eslint/no-var-requires": "off",
 
     'jsx-a11y/no-static-element-interactions': "off",
-    "jsx-a11y/click-events-have-key-events": "off"
-
+    "jsx-a11y/click-events-have-key-events": "off",
+    'no-shadow': "off"
   },
+  "overrides": [
+    {
+      "files": [ "*.slice.ts" ],
+      "rules": {
+        "no-param-reassign": ["error", { "props": false }]
+      }
+    }
+  ]
 };
