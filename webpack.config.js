@@ -19,6 +19,7 @@ const config = {
     open: true,
     host: "localhost",
   },
+  devtool: isProduction ? false : "source-map",
   plugins: [
     new CopyPlugin({
       patterns: [

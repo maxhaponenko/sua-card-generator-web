@@ -39,7 +39,28 @@ export const uploadImage = createAsyncThunk(
   }
 );
 
-const initialState = {} as CreatePdfCardFlowState;
+const initialState: CreatePdfCardFlowState = {
+  step: Step.Initial,
+  errors: {
+    imageNotAdded: false,
+    nameNotAdded: false,
+    textNotAdded: false,
+    unknown: false,
+  },
+  card: {
+    name: '',
+    text: '',
+    image: {
+      base64: '',
+      relativePath: '',
+      size: {
+        height: 0,
+        width: 0
+      },
+    }
+  }
+};
+
 const createPdfCardFlowSlice = createSlice({
   name: "createPdfCardFlow",
   initialState,
