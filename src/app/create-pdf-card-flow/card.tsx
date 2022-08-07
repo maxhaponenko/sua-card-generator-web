@@ -20,7 +20,7 @@ interface Props extends StateProps, DispatchProps {}
 
 export default function Card(props: Props) {
   const { card } = props
-  const imageShape = 'portrait'
+  const imageShape = 'square' || 'album' || 'portrait'
 
   const currentRow = {
     data: {
@@ -77,8 +77,8 @@ export default function Card(props: Props) {
     // return result
 
     return {
-      width: 30,
-      height: 50
+      width: 44,
+      height: 62
     }
   }
 
@@ -92,8 +92,8 @@ export default function Card(props: Props) {
           className={`image ${imageShape}`}
           style={{
             backgroundImage: `url(${card.image.base64})`,
-            width: `${getImageDimensions().width}vw`,
-            height: `${getImageDimensions().height}vw`,
+            width: `${getImageDimensions().width}%`,
+            height: `${getImageDimensions().height}%`,
           }}
         >
           <span className="add-image">Add image</span>
